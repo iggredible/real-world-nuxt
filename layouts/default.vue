@@ -11,6 +11,12 @@ import NavBar from '~/components/NavBar.vue'
 export default {
   components: {
     NavBar
+  },
+  head() {
+    return {
+      titleTemplate: '%s - Event listing',
+      meta: [{ hid: 'desc', name: 'desc', content: 'hello' }]
+    }
   }
 }
 </script>
