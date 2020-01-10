@@ -13,8 +13,6 @@ export const mutations = {
 }
 export const actions = {
   fetchEvents({ commit }) {
-    console.log('FETCHING')
-    console.log('eventservice: ', EventService)
     return EventService.getEvents().then(response => {
       console.log('SETTING_EVENTS')
       commit('SET_EVENTS', response.data)
@@ -22,6 +20,7 @@ export const actions = {
   },
   fetchEvent({ commit }, id) {
     return EventService.getEvent(id).then(response => {
+      console.log('SETTING_EVENT')
       commit('SET_EVENT', response.data)
     })
   }
